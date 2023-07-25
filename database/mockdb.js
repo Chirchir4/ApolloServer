@@ -1,18 +1,3 @@
- export const users =
-    [
-        {
-          name: 'Kate Chopin',
-          email: 'kate@gmail.com',
-          job:'finance',
-          project:[{title:'econ'}]
-        },
-        {
-            name: 'Paul Pin',
-            email: 'ppin@gmail.com',
-            job:'IT',
-            project:[{title:'cosc'}]
-        },
-      ];
   
 import pkg from 'pg';
 const { Client } = pkg;
@@ -27,3 +12,7 @@ dotenv.config()
   port:  process.env.DB_PORT,
 
 })
+client.connect()
+  .then(() => console.log('Database connected'))
+  .catch(error => console.error('Error connecting to the database:', error));
+
